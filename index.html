@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<h1><b>Lobmart</b></h1>
+</head>
+
+<body>
+<div class="wrapper">
+<button align style="font-size:24px" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#home" onclick="openInfo(event, 'Client')">Diet Restrictions</a>
+  <a href="#ds" onclick="openInfo(event, 'ds')">Delivery Services</a>
+  <a href="#lp" onclick="openInfo(event, 'lp')">LOBPOINTS</a>
+  <a href="#cu" onclick="openInfo(event, 'cu')">Contact Us</a>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+  <div class="topnav" id="myTopnav">
+  
+  <a href="#news"onclick="openInfo(event, 'Products')">Products</a>
+  <div class="dropdown">
+    <button class="dropbtn">Parent Stores
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://www.walmart.ca/en">Walmart</a>
+      <a href="#https://www.loblaws.ca/">Loblaws</a>
+    </div>
+  </div>
+  <a href="#about"onclick="openInfo(event, 'About')">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About Us</h3>
+  <p> We are based in Ottawa. We specialise with adapting to all allergies and dislikes to certain types of foods. We are still on the come up, and a lot of upgrades are yet to come to our website</p>
+</div>
+
+<div id="ds" class="tabcontent">
+  <h3>Delivery Services</h3>
+  <p>After placing your order call us at 1-880-954-4581 to assist you with your delivery</p>
+</div>
+
+<div id="lp" class="tabcontent">
+  <h3>LOBPOINTS</h3>
+  <p>Our points system is coming soon to help you save your money and earn rewards.</p>
+</div>
+
+<div id="cu" class="tabcontent">
+  <h2>Phone</h2>
+  <p>1-880-456-8774</p>
+  <h2>Email</h2>
+  <p>customerservice@lobmart.com</p>
+  <h2>Live Chat</h2>
+  <p>coming soon</p>
+</div>
+
+
+<div id="Client" class="tabcontent">
+  <h3>Diet Restrictions</h3>
+  <p>Please choose your dietary restrictions</p>
+	Choose a Category:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="LactoseIntolerant">Lactose Intolerant</option>
+	<option value="LactoseIntolerantOrganic">Lactose Intolerant (Organic)</option>
+    	<option value="NutAllergies">Nut Allergies</option>
+	<option value="NutAllergiesOrganic">Nut Allergies (Organic)</option>
+	<option value="LactoseIntolerantNutAllergies">Lactose Intolerant & Nut Allergies</option>
+	<option value="LactoseIntolerantNutAllergiesOrganic">Lactose Intolerant & Nut Allergies (Organic)</option>
+    	<option value="Organic">Organic</option>
+	<option value="Diabetic">Diabetic</option>
+	<option value="None">None</option>
+	
+	</select>
+	
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+  <p>To view products please set your dietery restrictions from the sidepanel.</p>
+	 Choose items to buy:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<footer> 
+Site was created by Moi.
+</footer>
+</div>
+
+
+
+
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
